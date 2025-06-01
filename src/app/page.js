@@ -2,6 +2,8 @@ import React from "react";
 import Header from "./components/header";
 import Testimonials from "./components/testimonials";
 import Staff from "./components/staff";
+import Image from "next/image";
+import HeroSection from "./components/hero";
 
 const Home = () => {
   const organizationSchema = {
@@ -27,31 +29,30 @@ const Home = () => {
     sameAs: [],
   };
 
- 
   // Data for the Gallery section
   const galleryImages = [
     {
-      src: "https://placehold.co/600x400/D0D0D0/444444?text=Activity+1",
+      src: "/gallery1.jpg",
       alt: "Children doing a sensory activity",
     },
     {
-      src: "https://placehold.co/600x400/E0E0E0/333333?text=Playtime+Fun",
+      src: "/g2.jpg",
       alt: "Children playing outdoors",
     },
     {
-      src: "https://placehold.co/600x400/D0D0D0/444444?text=Art+Class",
+      src: "/g3.jpg",
       alt: "Children creating art",
     },
     {
-      src: "https://placehold.co/600x400/E0E0E0/333333?text=Group+Learning",
+      src: "/g4.jpg",
       alt: "Small group learning session",
     },
     {
-      src: "https://placehold.co/600x400/D0D0D0/444444?text=Therapy+Session",
+      src: "/g5.jpg",
       alt: "One-on-one therapy session",
     },
     {
-      src: "https://placehold.co/600x400/E0E0E0/333333?text=Outdoor+Play",
+      src: "/g6.jpg",
       alt: "Children enjoying outdoor play",
     },
   ];
@@ -67,32 +68,7 @@ const Home = () => {
 
       <main>
         {/* Hero Section */}
-        <section
-          id="hero"
-          className="relative bg-black text-white flex items-center justify-center h-screen md:h-[600px] text-center overflow-hidden  shadow-lg mx-auto mb-8 max-w-full"
-        >
-          <img
-            src="https://placehold.co/1200x800/000000/FFFFFF?text=Children+Learning"
-            alt="Children engaged in inclusive learning activities"
-            className="absolute inset-0 w-full h-full object-cover opacity-30"
-          />
-          <div className="relative z-10 p-6 md:p-12 max-w-4xl">
-            <h2 className="text-4xl md:text-6xl font-extrabold leading-tight mb-4 animate-fade-in-up">
-              Nurturing Every Child's Potential
-            </h2>
-            <p className="text-xl md:text-2xl mb-8 animate-fade-in-up animation-delay-200">
-              Inclusive learning for all, fostering growth in a supportive and
-              personalized environment.
-            </p>
-            <a
-              href="#what-we-provide"
-              className="bg-green-500 text-white text-lg md:text-xl font-bold py-3 px-8 rounded-full hover:bg-green-600 transition duration-300 shadow-lg animate-fade-in-up animation-delay-400"
-            >
-              Learn More
-            </a>
-          </div>
-        </section>
-
+        <HeroSection />
         {/* About Us Section */}
         <section
           id="about"
@@ -172,12 +148,13 @@ const Home = () => {
               {galleryImages.map((image, index) => (
                 <div
                   key={index}
-                  className="overflow-hidden rounded-lg shadow-md hover:shadow-xl transform hover:-translate-y-1 transition duration-300"
+                  className="relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transform hover:-translate-y-1 transition duration-300 h-64 md:h-72"
                 >
-                  <img
+                  <Image
+                    fill
                     src={image.src}
                     alt={image.alt}
-                    className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
                   />
                 </div>
               ))}
@@ -186,7 +163,7 @@ const Home = () => {
         </section>
 
         {/* Staff Section */}
-      <Staff/>
+        <Staff />
 
         {/* Code of Conduct Section */}
         <section
@@ -387,9 +364,9 @@ const Home = () => {
           {/* Contact Info */}
           <div>
             <h4 className="text-2xl font-bold mb-4">The Learning Centre</h4>
-            <p className="mb-2">123 Education Lane, Learning City, LC 12345</p>
-            <p className="mb-2">Phone: (123) 456-7890</p>
-            <p className="mb-2">Email: info@thelearningcentre.org</p>
+            <p className="mb-2">Cape Town, South Africa</p>
+            <p className="mb-2">Phone: (+27) 749594511</p>
+            <p className="mb-2">Email: safodienfazlin07@gmail.com</p>
           </div>
 
           {/* Quick Links */}
@@ -467,8 +444,16 @@ const Home = () => {
 
           <div className="text-center mt-8 text-gray-400">
             <p>
-              &copy; {new Date().getFullYear()} Website created by. All rights
-              reserved.
+              &copy; {new Date().getFullYear()} Website created by{" "}
+              <a
+                href="https://akannemeyer.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-gray-600 transition-colors"
+              >
+                TDL2627
+              </a>
+              . All rights reserved.
             </p>
           </div>
         </div>
