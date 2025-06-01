@@ -10,6 +10,11 @@ const lexend = Lexend({
 
 export const metadata = {
   title: 'TLC - The Learning Centre ',
+    icons: {
+    icon: '/logo.png', // path to your favicon in the public folder
+    shortcut: '/logo.png',
+    apple: '/apple-touch-icon.png', // optional, if you want apple touch icon
+  },
   description: 'Established in 2019, The Learning Centre is an independent, small-group special needs learning platform in Cape Town, Western Cape. We promote each learner\'s full potential through individually designed programs, integrating ABA and WCED special needs curricula, supported by highly skilled educators in a relaxed, fully equipped environment. Our home away from home.',
   keywords: 'special needs school, learning centre, personalized learning, child development, special education, inclusive education, therapeutic support, South Africa, Cape Town, ABA curriculum, WCED special needs curriculum',
   openGraph: {
@@ -31,7 +36,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" class="scroll-smooth">
+    <html lang="en" className="scroll-smooth">
       <body
         className={`${lexend.variable} antialiased scroll-smooth`}
       >

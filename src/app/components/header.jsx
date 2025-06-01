@@ -1,6 +1,6 @@
 "use client";
-import { useState } from 'react';
-import { Menu, X } from 'lucide-react'; // Optional: use Heroicons if you prefer
+import { useState } from "react";
+import { Menu, X } from "lucide-react"; // Optional: use Heroicons if you prefer
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,7 +32,7 @@ export default function Header() {
         </div>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex space-x-6">
+        <nav className="hidden lg:flex space-x-6">
           {navItems.map((item) => (
             <a
               key={item.href}
@@ -46,7 +46,7 @@ export default function Header() {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden p-2 text-white"
+          className="lg:hidden p-2 text-white"
           onClick={() => setIsOpen(true)}
           aria-label="Open Menu"
         >
@@ -65,15 +65,19 @@ export default function Header() {
       {/* Slide-in Sidebar */}
       <aside
         className={`fixed top-0 left-0 h-full w-64 bg-black shadow-lg z-50 transform transition-transform duration-300 ${
-          isOpen ? 'translate-x-0' : '-translate-x-full'
+          isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
         <div className="flex justify-between items-center px-4 py-4 border-b">
-           <img
-            src="/logo.png" // <-- Replace with your actual path
-            alt="Logo"
-            className="h-10 w-10 object-contain"
-          />
+          <div className="flex items-center space-x-3">
+            <img
+              src="/logo.png"
+              alt="Logo"
+              className="h-10 w-10 object-contain"
+            />
+            <h2 className="text-2xl md:text-3xl font-extrabold text-white">TLC</h2>
+          </div>
+
           <button
             className="text-white"
             onClick={() => setIsOpen(false)}

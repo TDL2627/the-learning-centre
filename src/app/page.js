@@ -1,5 +1,7 @@
 import React from "react";
 import Header from "./components/header";
+import Testimonials from "./components/testimonials";
+import Staff from "./components/staff";
 
 const Home = () => {
   const organizationSchema = {
@@ -25,33 +27,7 @@ const Home = () => {
     sameAs: [],
   };
 
-  const staffData = [
-    {
-      name: "Mrs. Sarah Jenkins",
-      role: "Principal, Special Education Specialist",
-      bio: "With over 15 years of experience...",
-      image: "https://placehold.co/150x150/D0D0D0/444444?text=Sarah",
-    },
-    {
-      name: "Mr. David Lee",
-      role: "Therapeutic Support Coordinator",
-      bio: "David focuses on integrating therapy...",
-      image: "https://placehold.co/150x150/E0E0E0/333333?text=David",
-    },
-    {
-      name: "Ms. Emily White",
-      role: "ABA Therapist, Foundation Phase",
-      bio: "Emily is dedicated to early intervention...",
-      image: "https://placehold.co/150x150/D0D0D0/444444?text=Emily",
-    },
-    {
-      name: "Mr. Chris Green",
-      role: "Occupational Therapist",
-      bio: "Chris helps students develop essential...",
-      image: "https://placehold.co/150x150/E0E0E0/333333?text=Chris",
-    },
-  ];
-
+ 
   // Data for the Gallery section
   const galleryImages = [
     {
@@ -77,25 +53,6 @@ const Home = () => {
     {
       src: "https://placehold.co/600x400/E0E0E0/333333?text=Outdoor+Play",
       alt: "Children enjoying outdoor play",
-    },
-  ];
-
-  // Data for the Testimonials section
-  const testimonialsData = [
-    {
-      quote:
-        "The Learning Centre has been a true blessing for our child. The individualized attention and caring staff have made an incredible difference in their progress and confidence. It truly feels like a second home.",
-      author: "Parent of a Grade 3 Learner",
-    },
-    {
-      quote:
-        "We've seen remarkable growth in our son since he joined. The tailored programs and therapeutic support are outstanding. He looks forward to school every day!",
-      author: "Parent of a Grade 1 Learner",
-    },
-    {
-      quote:
-        "The educators here are truly passionate and skilled. They understand the unique needs of each child and create such a supportive and engaging environment. Highly recommend!",
-      author: "Parent of a Grade 5 Learner",
     },
   ];
 
@@ -229,40 +186,7 @@ const Home = () => {
         </section>
 
         {/* Staff Section */}
-        <section
-          id="staff"
-          className="py-16 px-6 md:px-12 bg-white rounded-xl shadow-md mx-auto my-8 max-w-6xl"
-        >
-          <div className="container mx-auto text-center">
-            <h3 className="text-4xl font-bold text-black mb-10">
-              Meet Our Dedicated Staff
-            </h3>
-            <p className="text-lg leading-relaxed max-w-3xl mx-auto mb-12">
-              Our team consists of highly skilled and compassionate educators
-              and therapists who are passionate about nurturing every child's
-              potential.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {staffData.map((member, index) => (
-                <div
-                  key={index}
-                  className="bg-gray-50 p-6 rounded-lg shadow-md flex flex-col items-center text-center hover:shadow-xl transition duration-300 transform hover:-translate-y-2"
-                >
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="rounded-full w-32 h-32 object-cover mb-4 border-4 border-gray-200"
-                  />
-                  <h4 className="text-xl font-semibold text-gray-800 mb-2">
-                    {member.name}
-                  </h4>
-                  <p className="text-gray-600 mb-3">{member.role}</p>
-                  <p className="text-black text-sm">{member.bio}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+      <Staff/>
 
         {/* Code of Conduct Section */}
         <section
@@ -320,36 +244,7 @@ const Home = () => {
         </section>
 
         {/* Testimonials Section */}
-        <section
-          id="testimonials"
-          className="py-16 px-6 md:px-12 bg-white rounded-xl shadow-md mx-auto my-8 max-w-6xl"
-        >
-          <div className="container mx-auto text-center">
-            <h3 className="text-4xl font-bold text-black mb-10">
-              What Our Families Say
-            </h3>
-            <p className="text-lg leading-relaxed max-w-3xl mx-auto mb-12">
-              Hear directly from the parents and guardians whose children have
-              blossomed at The Learning Centre.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {testimonialsData.map((testimonial, index) => (
-                <div
-                  key={index}
-                  className="bg-gray-50 p-6 rounded-lg shadow-md flex flex-col items-center text-center hover:shadow-xl transition duration-300 transform hover:-translate-y-2"
-                >
-                  <p className="text-black italic mb-4">
-                    "{testimonial.quote}"
-                  </p>
-                  <p className="font-semibold text-gray-800">
-                    - {testimonial.author}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
+        <Testimonials />
         {/* Contact Section */}
         <section
           id="contact"
