@@ -11,7 +11,7 @@ const Home = () => {
     "@type": "EducationalOrganization",
     name: "The Learning Centre",
     url: "https://www.thelearningcentre.co.za",
-    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtsJ9Z_BSG8xjKhI8FImZb5BCTKeye9lZCqg&s", // Replace with your school logo URL
+    logo: "https://www.thelearningcentre.co.za/logo.png", // Replace with your school logo URL
     description:
       "Established in 2019, The Learning Centre is an independent, small-group special needs learning platform in Cape Town, Western Cape. We promote each learner's full potential through individually designed programs, integrating ABA and WCED special needs curricula, supported by highly skilled educators in a relaxed, fully equipped environment. Our home away from home.",
     address: {
